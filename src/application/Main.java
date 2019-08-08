@@ -1,11 +1,11 @@
 package application;
 
-import java.io.File;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -13,10 +13,14 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-//            FXMLLoader loader = new FXMLLoader(new File("../gui/MainView.fxml").toURI().toURL());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
-            Parent parent = loader.load();
-            Scene mainScene = new Scene(parent);
+            ScrollPane scrollPane = loader.load();
+            
+//            Deixando os filhos totalmente ajustaveis ao pai(ScrollPane)
+            scrollPane.setFitToHeight(true);
+            scrollPane.setFitToWidth(true);
+            
+            Scene mainScene = new Scene(scrollPane);
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("Sample JavaFX application");
             primaryStage.show();
