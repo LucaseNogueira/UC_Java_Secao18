@@ -1,39 +1,39 @@
 package model.entities;
 
- import java.io.Serializable;
+import java.io.Serializable;
 
- public class Department implements Serializable {
+public class Department implements Serializable {
 
- 	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
- 	private Integer id;
+	private Integer id;
 	private String name;
-
- 	public Department() {
+	
+	public Department() {
 	}
 
- 	public Department(Integer id, String name) {
+	public Department(Integer id, String name) {
 		this.id = id;
 		this.name = name;
 	}
 
- 	public Integer getId() {
+	public Integer getId() {
 		return id;
 	}
 
- 	public void setId(Integer id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
- 	public String getName() {
+	public String getName() {
 		return name;
 	}
 
- 	public void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
- 	@Override
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -41,7 +41,7 @@ package model.entities;
 		return result;
 	}
 
- 	@Override
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -58,7 +58,7 @@ package model.entities;
 		return true;
 	}
 
- 	@Override
+	@Override
 	public String toString() {
 		return "Department [id=" + id + ", name=" + name + "]";
 	}
